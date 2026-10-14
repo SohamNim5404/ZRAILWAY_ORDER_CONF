@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZRAILWAY_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Error Message Class</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Production order not found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>&quot;No remaining quantity,Cannot create order.&quot;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Quantities cannot be negative</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Quantity to confirm plus scrap quantity cannot exceed remaining quantity</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Multiple operation records found; refine the operation selection</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>No production activity source found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Operation reference quantity must be greater than zero</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Save the record before Submit and Post</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Only a record with CREATED status can be posted</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Enter the order number</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Enter the operation</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Enter the posting date</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Fetch the confirmation unit first</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Yield and scrap quantities cannot be negative</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Enter a yield or scrap quantity greater than zero</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Remaining quantity is zero. Order cannot be posted</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Yield plus scrap cannot exceed remaining quantity</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Scrap item quantities cannot be negative</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>&quot;Enter material, storage location and unit for scrap items&quot;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Unable to read production activities</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Activity quantity cannot be negative</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Enter a unit for the activity quantity</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Activity number must be between 1 and 6</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Save the record before cancellation</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Only a posted confirmation can be cancelled</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Original confirmation identifiers are missing</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Save the record before posting goods receipt</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>A material document is already assigned. Posting is blocked</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Complete Post Confirmation before posting goods receipt</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Order number is required</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Material is required</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Plant is required</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Batch number is required</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Posting date is required</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Confirmation unit is required</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Quantity to Confirm must be greater than zero</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Scrap Quantity cannot be negative</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Unable to read rejection items</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>No rejection items available for posting</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Enter a rejection reason on every row</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Rejection units must match the header confirmation unit</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Storage location not found in manufacturing order item</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Save the record before cancelling rejection posting</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>No posted rejection material document is assigned</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Click Fetch Order Data before saving</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>KINDLY SELECT REJECTION REASON</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Please enter Order Number</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>Order &amp;1 not found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>This App only for Railway &amp; Disc Confirmation</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>GOODS ISSUE PENDING</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>Release production order &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>Kindly assign batch to production order &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>Order &amp;1 has no remaining quantity. Cannot create another confirmation.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>054</MSGNR>
+     <TEXT>Operation missing or quantity conversion denominator is zero</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>055</MSGNR>
+     <TEXT>Order &amp;1 details fetched successfully</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>056</MSGNR>
+     <TEXT>Order &amp;1 details fetched successfully</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>057</MSGNR>
+     <TEXT>Posting request failed for order &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>058</MSGNR>
+     <TEXT>Confirmation done for order</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>059</MSGNR>
+     <TEXT>Confirmation cancellation request failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>060</MSGNR>
+     <TEXT>Confirmation cancelled successfully for order</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>061</MSGNR>
+     <TEXT>Goods receipt material-document request failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>062</MSGNR>
+     <TEXT>Material-document mapping was not returned</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>063</MSGNR>
+     <TEXT>Batch goods receipt accepted for saving</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>064</MSGNR>
+     <TEXT>Rejection material document cancellation failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>065</MSGNR>
+     <TEXT>Rejection cancellation accepted for material document &amp;1 / &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>066</MSGNR>
+     <TEXT>Rejection total &amp;1 must equal header scrap quantity &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>067</MSGNR>
+     <TEXT>Rejection item quantity cannot be negative</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>068</MSGNR>
+     <TEXT>Rejection units must match the header confirmation unit</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZRAILWAY_MSG</ARBGB>
+     <MSGNR>069</MSGNR>
+     <TEXT>Unable to read rejection items</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

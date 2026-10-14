@@ -1,0 +1,351 @@
+managed implementation in class zbp_i_railway_ord unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_railway_ord alias railway_ord
+persistent table ztb_railway_ord
+with additional save
+draft table ztb_railwy_ord_d
+lock master total etag lastchangedat
+authorization master ( instance )
+{
+  create;
+  update;
+  delete ( features : instance );
+
+//  association _Serials { create; with draft; }
+  association _ScrapItems { create; with draft; }
+  association _Activities { create; with draft; }
+  association _REJECTION { create; with draft; }
+
+  field ( readonly, numbering : managed )
+  ConfirmId;
+
+  //  "Values populated by Fetch Order Data
+  field ( readonly )
+  FetchedOrderNo,
+  Material,
+  mat_desc,
+  Plant,
+  batch_number,
+  unit,
+  DisplayUnit,
+  //  group_defn,
+  order_type,
+  OrderQty,
+  ConfirmedQty,
+  confirmedscrapqty,
+  RemainingQty,
+  ConfirmationGroup,
+  ConfirmationCount,
+  MaterialDocument,
+  MaterialDocumentYear,
+  MaterialDocumentItem,
+  SerialsPosted,
+  Status,
+  statuscriticality;
+
+
+
+  determination SetInitialStatus on modify
+  {
+    create;
+  }
+
+  determination InvalidateOrderFetch on modify
+  {
+    field OrderNo,
+    postingdate,
+    start_end_date,
+    group_defn,
+    Operation,
+    WorkCenter,
+    QtyToConfirm,
+    ScrapQty,
+    weightqty;
+  }
+
+  validation ValidateOrderFetched on save
+  {
+    create;
+    //field OrderNo;
+    //  update;
+  }
+
+
+
+  validation ValidateTotalQuantity on save
+  {
+    create;
+    update;
+  }
+
+validation ValidateRejectionReason on save {
+  create;
+  update;
+}
+
+  validation ValidateSerialCount on save
+  {
+    create;
+    //  update;
+    field QtyToConfirm, ScrapQty;
+  }
+
+  //  "Technical fields
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  lastchangedat,
+  locallastchanged_at;
+
+  action FetchOrderData result [1] $self;
+  action ( features : instance ) SubmitAndPost result [1] $self;
+  action ( features : instance ) CancelConfirmation
+    result [1] $self;
+   action ( features : instance ) PostRejection
+  result [1] $self;
+
+action ( features : instance ) CancelRejection
+  result [1] $self;
+  side effects
+  {
+    action FetchOrderData affects
+        field Material,
+        field mat_desc,
+        field Plant,
+        field batch_number,
+        field postingdate,
+        field start_end_date,
+        field unit,
+        field DisplayUnit,
+    //        field group_defn,
+        field order_type,
+        field OrderQty,
+        field ConfirmedQty,
+        field confirmedscrapqty,
+        field RemainingQty,
+        field Operation,
+        field WorkCenter,
+        entity _ScrapItems,
+        entity _Activities;
+
+
+    action SubmitAndPost affects
+        field Status,
+        field SerialsPosted,
+        field postingdate,
+        permissions ( action SubmitAndPost ),
+        permissions ( action CancelConfirmation );
+
+    action CancelConfirmation affects
+        field Status,
+        field SerialsPosted,
+        permissions ( action SubmitAndPost ),
+        permissions ( action CancelConfirmation );
+
+        action PostRejection affects
+  field Status,
+  field MaterialDocument,
+  field MaterialDocumentYear;
+
+        action cancelrejection affects
+    field MaterialDocument,
+    field MaterialDocumentYear;
+
+
+    //  action MarkAllGood affects entity _Serials;
+  }
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Resume;
+  draft action Discard;
+
+  draft determine action Prepare
+  {
+    //    validation ( always ) ValidateOrderFetched;
+    validation ValidateTotalQuantity;
+validation ( always ) ValidateRejectionReason;
+    // validation ( always ) ScrapItem~ValidateScrapQuantity;
+    // validation ( always ) ValidateSerialCount;
+  }
+  mapping for ztb_railway_ord
+    {
+      ConfirmId            = confirm_id;
+      OrderNo              = order_no;
+      FetchedOrderNo       = fetched_order_no;
+      Material             = material;
+      mat_desc             = mat_desc;
+      Plant                = plant;
+      batch_number         = batch_number;
+      postingdate          = postingdate;
+      start_end_date       = start_end_date;
+      unit                 = unit;
+      DisplayUnit          = display_unit;
+      group_defn           = group_defn;
+      order_type           = order_type;
+      OrderQty             = order_qty;
+      ConfirmedQty         = confirmed_qty;
+      confirmedscrapqty    = confirmed_scrap_qty;
+      RemainingQty         = remaining_qty;
+      Operation            = operation;
+      WorkCenter           = work_center;
+      QtyToConfirm         = qty_to_confirm;
+      ScrapQty             = scrap_qty;
+      weightqty            = weight_qty;
+      ConfirmationGroup    = confirmation_group;
+      ConfirmationCount    = confirmation_count;
+      MaterialDocument     = material_document;
+      MaterialDocumentYear = material_document_year;
+      MaterialDocumentItem = material_document_item;
+      SerialsPosted        = serials_posted;
+      Status               = status;
+      statuscriticality    = statuscriticality;
+      CreatedBy           = created_by;
+      CreatedAt            = created_at;
+      lastchangedat           = last_changed_at;
+      locallastchanged_at            = local_last_changed_at;
+    }
+}
+
+
+
+define behavior for ZI_railwy_SCp alias ScrapItem
+persistent table ztb_railwy_scp
+draft table ztb_railwy_scp_d
+lock dependent by _OrderConfirmation
+authorization dependent by _OrderConfirmation
+{
+  update;
+  delete;
+
+  //   validation ValidateScrapQuantity on save
+  //  {
+  //    create;
+  //    update;
+  //    field ScrapQty;
+  //  }
+
+  field ( readonly, numbering : managed )
+  ScrapItemId;
+
+  field ( readonly )
+  ConfirmId,
+  CreatedBy,
+  CreatedAt,
+  ChangedBy,
+  ChangedAt;
+
+  field ( mandatory : create )
+  ScrapMaterial,
+  Scrapdesc,
+  StorageLocation,
+  Scrapunit,
+  DisplayScrapUnit;
+
+
+  association _OrderConfirmation
+  {
+    with draft;
+  }
+
+  mapping for ztb_railwy_scp
+    {
+      ScrapItemId      = scrap_item_id;
+      ConfirmId        = confirm_id;
+      ScrapMaterial    = scrap_material;
+      Scrapdesc        = scrap_desc;
+      StorageLocation  = storage_location;
+      ScrapQty         = scrap_qty;
+      Scrapunit        = scrap_unit;
+      displayscrapunit = displayscrap_unit;
+      CreatedBy        = created_by;
+      CreatedAt        = created_at;
+      ChangedBy        = changed_by;
+      ChangedAt        = changed_at;
+    }
+}
+
+define behavior for ZI_railwy_ACT alias Activity
+persistent table ztb_railwy_act
+draft table ztb_railwy_act_d
+lock dependent by _OrderConfirmation
+authorization dependent by _OrderConfirmation
+{
+  update;
+  delete;
+
+  field ( readonly, numbering : managed )
+  ActivityId;
+
+  field ( readonly )
+  ConfirmId,
+  Operation,
+  ActivitySlot,
+  ActivityLabel,
+  ActivityParam,
+  ActivityName,
+  //    ActivityQty,
+  ActivityUnit,
+  DisplayActivityUnit;
+
+  association _OrderConfirmation { with draft; }
+
+  mapping for ztb_railwy_act
+    {
+      ActivityId          = activity_id;
+      ConfirmId           = confirm_id;
+      Operation           = operation;
+      ActivitySlot        = activity_slot;
+      ActivityLabel       = activity_label;
+      ActivityParam       = activity_param;
+      ActivityName        = activity_name;
+      ActivityQty         = activity_qty;
+      ActivityUnit        = activity_unit;
+      DisplayActivityUnit = displayactivity_unit;
+    }
+}
+
+define behavior for ZI_RAIL_REJ alias Rejection
+persistent table ztb_rail_reject
+draft table ztb_rail_rejct_d
+lock dependent by _OrderConfirmation
+authorization dependent by _OrderConfirmation
+{
+  update;
+  delete;
+
+  field ( readonly, numbering : managed )
+    RejectionId;
+
+  field ( readonly )
+    ConfirmId,
+    CreatedBy,
+    CreatedAt,
+    LocalLastChangedAt,
+    LastChangedAt;
+
+  association _OrderConfirmation
+  {
+    with draft;
+  }
+
+  mapping for ztb_rail_reject
+  {
+    RejectionId       = rejection_id;
+    ConfirmId         = confirm_id;
+    OrderId           = order_id;
+    OrderType         = order_type;
+    RejectionReason   = rejection_reason;
+    Quantity          = quantity;
+    Unit              = unit;
+    displayrejunit    = displayrejunit;
+    Remark            = remark;
+    RejectionDate     = rejection_date;
+    CreatedBy         = created_by;
+    CreatedAt         = created_at;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt     = last_changed_at;
+  }
+}

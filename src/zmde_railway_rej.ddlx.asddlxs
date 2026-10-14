@@ -1,0 +1,177 @@
+@Metadata.layer: #CORE
+@UI.createHidden: true
+
+annotate entity ZC_RAIL_REJ with
+{
+  @UI.facet: [
+    {
+      id: 'GENERAL',
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GENERAL',
+      label: 'Rejection Details',
+      position: 10
+    }
+  ]
+
+//  "------------------------------------------------
+//  " HIDDEN FIELDS
+//  "------------------------------------------------
+
+  @UI.hidden: true
+  RejectionId;
+
+  @UI.hidden: true
+  ConfirmId;
+
+
+ 
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+
+//  "------------------------------------------------
+//  " 1. REJECTION REASON
+//  "------------------------------------------------
+
+  @EndUserText.label: 'Rejection Reason'
+  @UI.lineItem: [
+    {
+      position: 10,
+      label: 'Rejection Reason'
+    }
+  ]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'GENERAL',
+      position: 10
+    }
+  ]
+  rejectionreason;
+
+
+//  "------------------------------------------------
+//  " 2. QUANTITY
+//  "------------------------------------------------
+
+  @EndUserText.label: 'Quantity'
+  @UI.lineItem: [
+    {
+      position: 20,
+      label: 'Quantity'
+    }
+  ]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'GENERAL',
+      position: 20
+    }
+  ]
+  Quantity;
+  
+   @EndUserText.label: 'Unit'
+  @UI.lineItem: [
+    {
+      position: 25,
+      label: 'Unit'
+    }
+  ]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'GENERAL',
+      position: 25
+    }
+  ]
+  Unit;
+  
+
+//
+//  "------------------------------------------------
+//  " 3. REMARK
+//  "------------------------------------------------
+
+  @EndUserText.label: 'Remark'
+  @UI.lineItem: [
+    {
+      position: 30,
+      label: 'Remark'
+    }
+  ]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'GENERAL',
+      position: 30
+    }
+  ]
+  Remark;
+
+
+//  "------------------------------------------------
+//  " 4. DATE
+//  "------------------------------------------------
+
+  @EndUserText.label: 'Date'
+  @UI.lineItem: [
+    {
+      position: 40,
+      label: 'Date'
+    }
+  ]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'GENERAL',
+      position: 40
+    }
+  ]
+  RejectionDate;
+
+
+//  "------------------------------------------------
+//  " 5. ORDER ID
+//  "------------------------------------------------
+
+  @EndUserText.label: 'Order ID'
+  @UI.lineItem: [
+    {
+      position: 50,
+      label: 'Order ID'
+    }
+  ]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'GENERAL',
+      position: 50
+    }
+  ]
+  OrderId;
+
+
+//  "------------------------------------------------
+//  " 6. ORDER TYPE
+//  "------------------------------------------------
+
+  @EndUserText.label: 'Order Type'
+  @UI.lineItem: [
+    {
+      position: 60,
+      label: 'Order Type'
+    }
+  ]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'GENERAL',
+      position: 60
+    }
+  ]
+  OrderType;
+}

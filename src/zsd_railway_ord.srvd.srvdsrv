@@ -1,0 +1,8 @@
+@EndUserText.label: 'Railway Order Confirmation Service'
+define service ZSD_RAILWAY_ORD {
+  expose ZC_railway_ord  as RailwayOrder;
+  expose ZC_railway_SCP  as ScrapItem;
+  expose ZC_railway_ACT  as Activity;
+  expose ZC_RAIL_REJ     as REJECTION;
+  expose ZREJECT_TEXT_VH as REASON_VH;
+}
